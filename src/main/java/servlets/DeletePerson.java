@@ -2,6 +2,8 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 
 import javax.servlet.ServletException;
@@ -37,20 +39,35 @@ public class DeletePerson extends HttpServlet {
 		String id = request.getParameter("id");
 		String status = "200";
 		//in acest JSP intampin problema dependentelor intre tabele		
-		String sql = "DELETE FROM person WHERE id = " + id;
-		
+		String deletePerson = "DELETE FROM person WHERE id = " + id;
+		String deleteBirthday = "DELETE FROM birthday WHERE idPerson = " + id;
+		String getSqlAddressId = "SELECT idAddress FROM birthdays.person WHERE id = " + id;
+		String sqlAddress = "DELETE FROM address WHERE id = ";
+		int addressId = 0;
 		try 
 		{
-			MySqlConnection.runSQLWithConstraints( sql );
+			MySqlConnection.runSQLWithConstraints( deleteBirthday );
+			ResultSet addressIdRS = MySqlConnection.runQuery(getSqlAddressId);
+			try {
+				addressIdRS.next();
+				addressId = addressIdRS.getInt("idAddress");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			MySqlConnection.runSQLWithConstraints( sqlAddress + addressId );
+			MySqlConnection.runSQLWithConstraints( deletePerson );	
+
 		} 
 		catch (SQLIntegrityConstraintViolationException e)
 		{
 			//trebuie sa ii zic lui view persoane ca este ceva in neregula
+			e.printStackTrace();
 			status = "300";
 		}
 		
 		//System.out.println(sql);
-		pw.append("<script>window.location.replace(\"homePage.jsp?status=\"" + status + "\")</script>"); //I need to replace the script to redirect to the homepage
+		pw.append("<script>window.location.replace(\"homePage.jsp?status=" + status + "\")</script>"); //I need to replace the script to redirect to the homepage
 		
 		//pw.append("<script>document.write(\"<table width=\"\" + dim + \"\"></table>\")</script>");
 		//pw.append("<script>window.location.replace(\"DataViewsJSP/viewPersoane.jsp?status=");

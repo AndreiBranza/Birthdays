@@ -35,6 +35,8 @@ public class NewPerson extends HttpServlet {
 		String email = request.getParameter("email");
 		String mobileNo = request.getParameter("phoneNumber");
 		int addressID = Integer.valueOf(request.getParameter("idAddress"));
+		String birthday_yyy_mm_dd = request.getParameter("birthday_dd_MMM_yyy");
+		System.out.println(birthday_yyy_mm_dd);
 		
 		String sqlSequence = "INSERT INTO person (firstName, lastName, email, mobileNo, idAddress) VALUES ("
 				+ "'" + firstName + "'"
@@ -44,6 +46,19 @@ public class NewPerson extends HttpServlet {
 				+ ")";
 		
 		MySqlConnection.runSQL(sqlSequence);
+		
+		/*
+		 * in newPersoane jsp trebuie adaugate campruile pentru data nasterii 		 * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date
+		 * campul care se va trimite cu data nasterii va trebui formatat
+
+		 * aici, in newperson servlet iau luna, ziua si anul si le stochez intr-o variabila
+		 * dupa ce am rulat sql-ul de adaugare persoana in baza de date mai rulez un sql care imi returneaza id-ul persoanei cautand in baza de date elementul care corespunde criteriilor
+		 * firstName, lastName, email, mobileNo
+		 * rulez un nou sql care imi adauga adresa in baza de date
+		 *  
+		 */
+		
+		
 		
 		PrintWriter pw = response.getWriter();
 		

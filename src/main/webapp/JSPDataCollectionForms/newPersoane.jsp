@@ -8,6 +8,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+		label 
+		{
+    		display: block;
+    		font: 1rem 'Fira Sans', sans-serif;
+		}
+
+		input, label 
+		{
+    		margin: .4rem 0;
+		}
+</style>
 </head>
 <body>
 	<% //am citit pe net ca by default the method attribute is set to GET %>
@@ -74,6 +86,14 @@
 					%>	
 
 					<a href="../JSPDataCollectionForms/newAddress.jsp">add</a>  
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Select birthday
+				</td>
+				<td>
+					<input type="date" id="start" name="birthday_dd_MMM_yyy" value="2018-07-22" min="1920-01-01" max="2004-12-31">
 				</td>
 			</tr>
 			<tr>

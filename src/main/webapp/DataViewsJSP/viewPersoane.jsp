@@ -117,7 +117,7 @@ out.println("</tr>");
 		
 		out.println("		<td align = center>");
 		//trebuie sa afisez iconita de delete si sa o linkuiesc cu servlet-l de deleteAddress
-		out.println(		"<a href = \"../DeletePerson?id=" + rs.getInt("idPerson") + "\">");
+		out.println(		"<a href = \"../DeletePerson?id=" + rs.getInt("idPerson")+ "\">");
 		out.println("<img src=\"../images/deleteIcon.png\" alt=\"Delete Entry Icon\" width = 20 height = 20>");
 		out.println("		</a>");
 		out.println("		</td>");
