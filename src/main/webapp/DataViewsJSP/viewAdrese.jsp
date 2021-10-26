@@ -62,30 +62,30 @@ out.println("</tr>");
 		out.println(rs.getInt("idAddress") + " ");
 		out.println("		</td>");
 
-		out.println("		<td width=\"200\">");
+		out.println("		<td width=\"100\">");
 		out.println(rs.getString("cityAddress") + " ");
 		out.println("		</td>");
 		
-		out.println("		<td width=\"200\">");
+		out.println("		<td width=\"130\">");
 		out.println(rs.getString("countyAddress") + " ");
 		out.println("		</td>");
 		
-		out.println("		<td width=\"200\">");
+		out.println("		<td width=\"180\">");
 		out.println(rs.getString("street") + " ");
 		out.println("		</td>");
 		
-		out.println("		<td align = center>");
-		//trebuie sa afisez iconita de delete si sa o linkuiesc cu servlet-l de deleteAddress
+		out.println("		<td width=\"50\" align = center>");
 		out.println(		"<a href = \"../DeleteAddress?id=" + rs.getInt("idAddress") + "\">");
 		out.println("<img src=\"../images/deleteIcon.png\" alt=\"Delete Entry Icon\" width = 20 height = 20>");
 		out.println("		</a>");
 		out.println("		</td>");
 		
-		out.println("		<td align = center>");
-		//out.println("		<a href = \"../EditJSPs/editAddress.jsp?id=" + rs.getInt("idAddress") + "\" >");
-		out.println("<img src = \"../images/editIcon.png\" alt =\"Edit Icon\" width = 20 height = 20>");		out.println("		</td>");
+		out.println("		<td width=\"50\" align = center>");
+		out.println("		<a href = \"../EditJSPs/editAddress.jsp?id=" + rs.getInt("idAddress") + "\" >");
+		out.println("<img src = \"../images/editIcon.png\" alt =\"Edit Icon\" width = 20 height = 20>");		
+		out.println("		</td>");
 		
-			out.println("</tr>");
+		out.println("</tr>");
 		
 		i++;
 	}
