@@ -70,7 +70,7 @@ public class DeletePerson extends HttpServlet {
 		pw.append("<script>window.location.replace(\"homePage.jsp?status=" + status + "\")</script>"); //I need to replace the script to redirect to the homepage
 		
 		//pw.append("<script>document.write(\"<table width=\"\" + dim + \"\"></table>\")</script>");
-		//pw.append("<script>window.location.replace(\"DataViewsJSP/viewPersoane.jsp?status=");
+		//pw.append("<script>window.location.replace(\"DataViewsJSP/viewPersons.jsp?status=");
 		//pw.append(status);
 		//pw.append("\")</script>"  );
 		

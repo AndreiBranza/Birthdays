@@ -40,7 +40,7 @@ public class NewCity extends HttpServlet {
 		
 		PrintWriter pw = response.getWriter();
 
-		pw.append("<script>window.location.replace(\"DataViewsJSP/viewOrase.jsp\");</script>");
+		pw.append("<script>window.location.replace(\"DataViewsJSP/viewCities.jsp\");</script>");
 
 	}
 

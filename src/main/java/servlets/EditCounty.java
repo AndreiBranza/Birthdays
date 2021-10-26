@@ -59,7 +59,7 @@ public class EditCounty extends HttpServlet {
 		}
 		else
 		{
-			pw.append("<a href=\"DataViewsJSP/viewJudete.jsp\">Take me back</a><br>");
+			pw.append("<a href=\"DataViewsJSP/viewCounties.jsp\">Take me back</a><br>");
 		}
 		
 		pw.append("<table border = 0, cellpadding = 5>");

@@ -53,7 +53,7 @@ public class EditCity extends HttpServlet {
 		{
 			pw.append("The city has been updated.");
 			pw.append("<br>");
-			pw.append("<a href=\"DataViewsJSP/viewOrase.jsp\">Take me back</a><br>");
+			pw.append("<a href=\"DataViewsJSP/viewCities.jsp\">Take me back</a><br>");
 			pw.append("<table border = 0, cellpadding = 5>");
 		}
 		else 
@@ -61,7 +61,7 @@ public class EditCity extends HttpServlet {
 			//catch ()
 			pw.append("There has been an error. Please retry.");
 			pw.append("<br>");
-			pw.append("<a href=\"DataViewsJSP/viewOrase.jsp\">Take me back</a><br>");
+			pw.append("<a href=\"DataViewsJSP/viewCities.jsp\">Take me back</a><br>");
 			pw.append("<table border = 0, cellpadding = 5>");
 		}
 		

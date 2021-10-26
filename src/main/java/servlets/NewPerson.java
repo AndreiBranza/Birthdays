@@ -5,9 +5,6 @@ import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -90,7 +87,7 @@ public class NewPerson extends HttpServlet {
 		
 		PrintWriter pw = response.getWriter();
 		
-		pw.append("<script>window.location.replace(\"DataViewsJSP/viewPersoane.jsp\");</script>");
+		pw.append("<script>window.location.replace(\"DataViewsJSP/viewPersons.jsp\");</script>");
 	}
 	
 	/**

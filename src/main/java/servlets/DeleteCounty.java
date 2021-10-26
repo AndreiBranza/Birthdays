@@ -40,7 +40,7 @@ public class DeleteCounty extends HttpServlet {
 		//System.out.println(sql);
 		MySqlConnection.runSQL( sql );
 		
-		pw.append("<script>window.location.replace(\"DataViewsJSP/viewJudete.jsp\");</script>");
+		pw.append("<script>window.location.replace(\"DataViewsJSP/viewCounties.jsp\");</script>");
 	}
 
 	/**

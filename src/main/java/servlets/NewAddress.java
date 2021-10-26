@@ -40,7 +40,7 @@ public class NewAddress extends HttpServlet {
 		
 		PrintWriter pw = response.getWriter();
 
-		pw.append("<script>window.location.replace(\"../DataViewsJSP/viewAdrese.jsp\");</script>");
+		pw.append("<script>window.location.replace(\"../DataViewsJSP/viewAdresses.jsp\");</script>");
 
 	}
 

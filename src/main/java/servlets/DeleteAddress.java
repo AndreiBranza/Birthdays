@@ -41,7 +41,7 @@ public class DeleteAddress extends HttpServlet {
 		MySqlConnection.runSQL( sql );
 		
 		
-		pw.append("<script>window.location.replace(\"DataViewsJSP/viewAdrese.jsp\");</script>");
+		pw.append("<script>window.location.replace(\"DataViewsJSP/viewAdresses.jsp\");</script>");
 	}
 
 }

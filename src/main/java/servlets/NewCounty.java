@@ -48,7 +48,7 @@ public class NewCounty extends HttpServlet
 		{
 			//pw.append("<font color=\"red\">A situation prevented the addition of county " + judet + "!!!!</b>");
 		}
-		pw.append("<script>window.location.replace(\"DataViewsJSP/viewJudete.jsp\");</script>");
+		pw.append("<script>window.location.replace(\"DataViewsJSP/viewCounties.jsp\");</script>");
 		
 	}
 

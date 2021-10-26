@@ -48,7 +48,7 @@ public class DeleteCity extends HttpServlet {
 		MySqlConnection.runSQL( sql );
 				
 		//System.out.println(sql);
-		pw.append("<script>window.location.replace(\"DataViewsJSP/viewOrase.jsp\");</script>");
+		pw.append("<script>window.location.replace(\"DataViewsJSP/viewCities.jsp\");</script>");
 	}
 
 	/**
