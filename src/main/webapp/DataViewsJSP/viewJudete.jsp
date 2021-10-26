@@ -40,7 +40,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan=2 height=50 valign="center">
+				<td colspan=2 height=50 >
 					Do you want to delete the record with id
 					<span id="whatToDeleteValue"></span>
 					?
@@ -123,7 +123,6 @@ out.println("</tr>");
 		i++;
 	}
 	%>
-	</table>
 	
 	<script>
 		function setDisplay( value)

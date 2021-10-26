@@ -7,14 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action = "../newBirthday" method = "GET">
+	<form action = "../NewBirthday" method = "GET">
 		<table>
 			<tr>
 				<td>
 					Person ID
 				</td>
 				<td>
-					<input type="text" name = "idPerson">
+					<input type="text" name = "idPerson" >
 				</td>
 			</tr>
 			<tr>
@@ -22,7 +22,7 @@
 					Birthday
 				</td>
 				<td>
-					 <input type="text" name = "birthday">		  
+					 <input type="text" name = "birthday" value = "YYYY-MM-DD">		  
 				</td>
 			</tr>
 			<tr>

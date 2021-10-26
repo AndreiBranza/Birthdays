@@ -1,13 +1,11 @@
 package view;
 
 import java.util.HashMap;
-import model.AddressModel;
 import javax.servlet.jsp.JspWriter;
 
 public class AddressViewHtml extends AddressView
 {
 	//acesta metoda nu stie de unde ia modelul datele si nici nu o intereseaza
-
 	
 	@Override
 	public void drawSelector(JspWriter out) 
@@ -26,7 +24,7 @@ public class AddressViewHtml extends AddressView
 		}
 		catch(Exception ex)
 		{
-			
+			ex.printStackTrace();
 		}
 		
 	}

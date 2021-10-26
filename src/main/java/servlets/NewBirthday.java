@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLIntegrityConstraintViolationException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +15,7 @@ import tools.MySqlConnection;
 /**
  * Servlet implementation class NewBirthday
  */
-@WebServlet(name = "newBirthday", urlPatterns = { "/newBirthday" })
+@WebServlet(name = "NewBirthday", urlPatterns = { "/NewBirthday" })
 public class NewBirthday extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -36,7 +37,12 @@ public class NewBirthday extends HttpServlet {
 		
 		String sqlSequence = "INSERT INTO birthday (idPerson, birthday) VALUES (" + personID + ", '" + birthday + "')";
 		
-		MySqlConnection.runSQL(sqlSequence);
+		try {
+			MySqlConnection.runSQLWithConstraints(sqlSequence);
+		} catch (SQLIntegrityConstraintViolationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		PrintWriter pw = response.getWriter();
 		

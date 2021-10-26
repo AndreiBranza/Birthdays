@@ -34,7 +34,7 @@
 			servlet iar in servlet sa lasam headerul gol?
 	*/
 	%>
-	<form action = "../newPersoane">
+	<form action = "../NewPerson">
 		<table>
 			<tr>
 				<td>
@@ -93,7 +93,7 @@
 					Select birthday
 				</td>
 				<td>
-					<input type="date" id="start" name="birthday_dd_MMM_yyy" value="2018-07-22" min="1920-01-01" max="2004-12-31">
+					<input type="date" id="start" name="birthday_yyyy_mm_dd" value="2018-07-22" min="1920-01-01" max="2004-12-31">
 				</td>
 			</tr>
 			<tr>

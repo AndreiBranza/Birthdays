@@ -6,7 +6,6 @@ import java.io.Serializable;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 public class CancelButton extends JFrame implements ActionListener, Serializable {
 

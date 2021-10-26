@@ -2,6 +2,11 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +19,7 @@ import tools.MySqlConnection;
 /**
  * Servlet implementation class NewPerson
  */
-@WebServlet(name = "newPerson", urlPatterns = {"/newPersoane"})
+@WebServlet(name = "NewPerson", urlPatterns = {"/NewPerson"})
 public class NewPerson extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -35,18 +40,41 @@ public class NewPerson extends HttpServlet {
 		String email = request.getParameter("email");
 		String mobileNo = request.getParameter("phoneNumber");
 		int addressID = Integer.valueOf(request.getParameter("idAddress"));
-		String birthday_yyy_mm_dd = request.getParameter("birthday_dd_MMM_yyy");
-		System.out.println(birthday_yyy_mm_dd);
+		String birthday_yyyy_mm_dd = request.getParameter("birthday_yyyy_mm_dd");
+		System.out.println(birthday_yyyy_mm_dd);
+		ResultSet idPerson;
+		int idPersonInt = 0;
 		
-		String sqlSequence = "INSERT INTO person (firstName, lastName, email, mobileNo, idAddress) VALUES ("
-				+ "'" + firstName + "'"
-				+ ","
-				+ "'" + lastName + "'"
-				+ ", '" + email + "', '" + mobileNo + "', " + addressID
-				+ ")";
+		String sqlSequence = "INSERT INTO person (firstName, lastName, email, mobileNo, idAddress) VALUES ('" + firstName + "','" + lastName + "','" + email + "','" + mobileNo + "','" + addressID + "')";
+		try {
+			MySqlConnection.runSQLWithConstraints(sqlSequence);
+		} catch (SQLIntegrityConstraintViolationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		String sqlIdPerson = "SELECT id FROM birthdays.person WHERE firstName = '" + firstName + "' AND lastName = '" + lastName + "' AND email = '" + email + "' AND mobileNo = '" + mobileNo + "'";
+		idPerson = MySqlConnection.runQuery(sqlIdPerson);
 		
-		MySqlConnection.runSQL(sqlSequence);
+		try {
+			idPerson.next();
+			idPersonInt = idPerson.getInt(1);
+			System.out.println(idPersonInt);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
+		String sqlSeqForBirthday = "INSERT INTO birthday (idPerson, birthday) VALUES ('" + idPersonInt + "', '" + birthday_yyyy_mm_dd + "')";
+		
+		try {
+			MySqlConnection.runSQLWithConstraints(sqlSeqForBirthday);
+		} catch (SQLIntegrityConstraintViolationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+				
 		/*
 		 * in newPersoane jsp trebuie adaugate campruile pentru data nasterii 		 * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date
 		 * campul care se va trimite cu data nasterii va trebui formatat

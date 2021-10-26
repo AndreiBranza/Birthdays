@@ -81,7 +81,7 @@ out.println("</tr>");
 		out.println("		</a>");
 		out.println("		</td>");
 		
-		out.println("		<td width=\"200\">");
+		out.println("		<td align = center>");
 		//out.println("		<a href = \"../EditJSPs/editAddress.jsp?id=" + rs.getInt("idAddress") + "\" >");
 		out.println("<img src = \"../images/editIcon.png\" alt =\"Edit Icon\" width = 20 height = 20>");		out.println("		</td>");
 		
