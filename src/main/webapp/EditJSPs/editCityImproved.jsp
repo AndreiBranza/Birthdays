@@ -60,7 +60,7 @@
 					  	%>
 					  </select>	
 					  <% 
-					  	out.println("		<a href = \"../EditJSPs/editCounty.jsp?id=" + idCounty + "&source=EditJSPs/editCityv02.jsp?id=" + id + "\" >");
+					  	out.println("		<a href = \"../EditJSPs/editCounty.jsp?id=" + idCounty + "&source=EditJSPs/editCity.jsp?id=" + id + "\" >");
 						out.println("<img src = \"../images/editIcon.png\" alt =\"Edit Icon\" width = 20 height = 20>");
 						out.println("		</a>");
 					  %>

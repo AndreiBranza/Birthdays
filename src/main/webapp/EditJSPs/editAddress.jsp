@@ -6,18 +6,40 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Edit Address</title>
 </head>
 <body>
+<%
+int idCity = 0;
+int idCounty = 0;
+ResultSet idCityOrCountyRs = null;
+
+//here is the address id
+String addressId = request.getParameter("id");
+//here is the address name for the placeholder
+String addressName = request.getParameter("addressName");
 
 
-<!-- ca sa pot edita adresa am nevoie de viewAdresses
-idCity
-idCounty
-street
-id de la adresa
-noile valori le trimit prin sql catre baza de date sa fie 
-actualizate intr-o lovitura
- -->
+
+%> 
+ <form action = "../EditAddress" method = "GET">
+		<table>
+			<tr>
+				<td>
+					Address
+				</td>
+				<td>
+					<input type="text" name = "newAddressValue" value="<%=addressName %>">
+					<input type="hidden" name = "addressId" value="<%= addressId %>">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="Update">
+				</td>
+			</tr>
+		</table>
+	</form>	
+ 
 </body>
 </html>

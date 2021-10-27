@@ -17,7 +17,7 @@
 <%
 	String id = request.getParameter("id");
 	String source = request.getParameter("source");
-	//pot face asa..dar nu mise pare ok..mai bine adaug hiddenul daca este cazul pe la linia 57
+	//pot face asa..dar nu mi se pare ok..mai bine adaug hiddenul daca este cazul pe la linia 57
 	//if( source == null || "null".equals(source) )
 	//{
 	//	source = "";

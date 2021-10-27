@@ -46,7 +46,7 @@
 					
 				</td>
 				<td >
-					<a href = "newPersoane.jsp" >  Go back </a>
+					<a href = "newPersons.jsp" >  Go back </a>
 				</td>
 			</tr>
 		</table>
