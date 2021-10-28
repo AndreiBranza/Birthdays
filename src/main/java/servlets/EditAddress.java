@@ -37,7 +37,7 @@ public class EditAddress extends HttpServlet {
 		String addressId = request.getParameter("addressId");	
 		String newValueOfAddress = request.getParameter("newAddressValue");
 		
-		//trebuie sa obtin valorile idurilor de city si county
+		//trebuie sa obtin valorile idurilor de city si county asdafasfa
 		
 		String addressEditSql = "UPDATE address SET street = '" + newValueOfAddress + "' WHERE id ='" + addressId + "'"	;
 		System.out.println(addressEditSql);
