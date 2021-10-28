@@ -16,7 +16,7 @@ import tools.MySqlConnection;
 /**
  * Servlet implementation class EditAddress
  */
-@WebServlet("/EditAddress")
+@WebServlet("/EditAddressNeedsRevision")
 public class EditAddressForCityAndCountyNeedsRevision extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

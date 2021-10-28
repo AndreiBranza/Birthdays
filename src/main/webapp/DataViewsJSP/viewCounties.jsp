@@ -33,7 +33,7 @@
 		var whatToDelete = '0';
 	</script>
 	<div class="popup" id="popup">
-		<table width="100%">
+		<table>
 			<tr>
 				<td colspan=2 height=20 bgcolor="#B45F04">
 					Delete
