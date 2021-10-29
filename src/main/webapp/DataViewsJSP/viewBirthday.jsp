@@ -76,6 +76,17 @@ out.println("		</td>");
 		out.println(formattedBirthday + " ");
 		out.println("		</td>");
 		
+		out.println("		<td width=\"50\" align = center>");
+		out.println(		"<a href = \"../DeleteAddress?id=" + rs.getInt("idAddress") + "\">");
+		out.println("<img src=\"../images/deleteIcon.png\" alt=\"Delete Entry Icon\" width = 20 height = 20>");
+		out.println("		</a>");
+		out.println("		</td>");
+		
+		out.println("		<td width=\"50\" align = center>");
+		out.println("		<a href = \"../EditJSPs/editAddress.jsp?id=" + rs.getInt("idAddress") + "&cityName=" + rs.getString("cityAddress") + "&countyName=" + rs.getString("countyAddress") + "&addressName=" + rs.getString("street") + "\" >");
+		out.println("<img src = \"../images/editIcon.png\" alt =\"Edit Icon\" width = 20 height = 20>");		
+		out.println("		</td>");
+		
 		out.println("</tr>");
 		
 		i++;

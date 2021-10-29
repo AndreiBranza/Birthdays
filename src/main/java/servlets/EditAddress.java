@@ -40,7 +40,7 @@ public class EditAddress extends HttpServlet {
 		//trebuie sa obtin valorile idurilor de city si county asdafasfa
 		
 		String addressEditSql = "UPDATE address SET street = '" + newValueOfAddress + "' WHERE id ='" + addressId + "'"	;
-		System.out.println(addressEditSql);
+		//System.out.println(addressEditSql);
 	
 		boolean successfullAddressEdit = MySqlConnection.runSQL(addressEditSql);
 		
